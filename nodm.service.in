@@ -7,4 +7,5 @@ After=systemd-user-sessions.service
 EnvironmentFile=-/etc/default/nodm
 ExecStartPre=/usr/bin/test ${NODM_ENABLED} != no -a ${NODM_ENABLED} != false
 ExecStart=@sbindir@/nodm $NODM_OPTIONS
+ExecStop=killall -9 nodm
 Restart=always
